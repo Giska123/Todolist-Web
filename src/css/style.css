@@ -1,0 +1,588 @@
+
+ 
+ #header {
+   height: 12vh;
+   width: 100%;
+   color: var(--white-color);
+   background-color: var(--blue-color);
+   display: flex;
+   align-items: center;
+ }
+
+   .header-bg {
+      padding: 0 10%;
+   }
+
+   .header-text {
+      text-transform: uppercase;
+   }
+
+#main, #detail {
+   position: absolute;
+   width: 100%;
+   min-height: 100%;
+   background-color: var(--grey-color);
+   padding: 0 10%;
+}
+
+   .activity-head {    
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 30px 0;
+   }
+
+   h1 {
+      font-size: 24px;
+   }
+
+   .btn-tambah {
+      display: flex;
+      justify-content: center;
+      font-size: 18px;
+      color: var(--white-color);
+      background-color: var(--blue-color);
+      padding: 12px 25px;
+      border: 0;
+      border-radius: 35px;
+      cursor: pointer;
+   }
+
+   .icon-btn-act {
+      padding-top: 2px;
+      margin-right: 6px;
+   }
+
+   .card-activity{
+      display: grid;
+      grid-template-columns: 15% 85% ;
+      grid-template-rows: auto auto;
+      margin: 2.5%;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px #969ea633;
+      padding: 7% 9%;
+   }
+
+         a.card-title{
+            font-size: 20px;
+         }
+
+      .card-body {
+         margin-bottom: 9px;
+         cursor: pointer;
+      }
+
+      .card-footer {
+         display: flex;
+         align-items: center;
+         width: 100%;
+      }
+
+         .card-footer p {
+            width: 80%;
+            font-size: .9em;
+            color: var(--disabled-color);
+         }
+
+         .card-footer .delete-btn, .card-footer .edit-btn {
+            display: flex;
+            justify-content: end;
+            width: 15%;
+            cursor: pointer;
+         }
+
+         .edit-btn, .delete-btn {
+            font-size: .9em;
+         }
+      
+      .card-wrap {
+         position: relative;
+         grid-row: 1 / span 2;
+      }
+
+         .card-wrap .check {
+            position: absolute;
+            top: 6.5%;
+         }
+
+
+.message {
+   position: fixed;
+   background: rgba(0, 0, 0, 0.418);
+   top: -12vh;
+   width: 100%;
+   height: 112%;
+   z-index: 6;
+}
+
+.message-container{
+   position: absolute;
+   width: 85%;
+   height: 35%;
+   margin: auto;
+   top: 10%;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   text-align: center;
+   border-radius: 4px;
+   box-shadow:  1px 2px 18px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.message-container {
+   color: #333;
+   background-color: white;
+}
+
+.message-text {
+   position: absolute;
+   top: 50%; 
+   left: 50%;
+   transform: translate(-50%,-50%);
+}
+
+   .msg-icon {
+      font-size: 2.5em;
+      color: var(--red-color);
+   }
+
+   .message-text  h3 {
+      font-size: .9em;
+      font-weight: 400;
+      margin-bottom: 1.1em;
+   }
+
+   .message-text  p {
+      font-size: 1em;
+      margin-bottom: 1.5em;
+   }
+
+   .btn-modal {
+      display: flex;
+      gap: 12px;
+   }
+
+   .message-text button {
+      padding: 6% 11vw;
+      font-size: .9em;
+      border-radius: 30px;
+      cursor: pointer;
+      border: 0;
+   }
+
+      .btn-msg1 {  
+         padding: 0 1.5vw;
+      }
+
+      .btn-msg2 {  
+         color: white;
+         background-color: var(--red-color);
+      }
+      
+      .btn-msg1:hover, .btn-msg2:hover {
+         box-shadow:  1px 2px 14px 2px rgba(0, 0, 0, 0.3);
+      }
+
+.detail-head {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   padding: 30px 0;
+}
+
+.title-detail {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+   .title-left {
+      display: flex;
+      gap: 8px;
+      margin-right: 14px;
+   }
+
+   .sort-btn {
+      background-color: transparent;
+      border: 1px solid var(--disabled-color);
+      border-radius: 30px;
+      padding: 8px 12px;
+      cursor: pointer;
+   }
+
+   .icon {
+      margin-top: 2px;
+      font-size: 18px;
+   }
+
+.action-detail {
+   display: flex;
+   gap: 8px;
+   justify-content: flex-end;
+}
+   
+
+.card-detail {
+   width: 100%;
+   
+}
+
+   .todo_ {
+      width: 100%;
+      background-color: white; 
+      padding: 11px;
+      margin-bottom: 1%;
+      font-size: .9em;
+   }
+
+   .todo-text {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1%;
+   }
+
+      #p-wrap {
+         white-space: pre-line;
+         overflow: hidden;
+         text-overflow: ellipsis; 
+         display: -webkit-box;
+         -webkit-line-clamp: 5;
+         -webkit-box-orient: vertical;
+       }
+
+   .todo-date {
+      display: flex;
+      justify-content: space-between;
+   }
+
+       #p-date {
+         justify-content: flex-start;
+       }
+
+      .icon_ {
+         display: inline-flex;
+         margin-left: 1.5em;
+      }
+
+      .edit-icon {
+         cursor: pointer;
+         margin-top: .1em;
+         margin-right: .5em;
+      }
+
+      .delete-icon {
+         cursor: pointer;
+         margin-top: .1em;
+      }
+
+      .edit-text {
+         cursor: pointer;
+      }
+
+.todo-add { 
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.3);
+   z-index: 6;
+}
+
+   .todo-add-container {
+      position: absolute;
+      width: 270px;
+      height: 400px;
+      margin: auto;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 7px;
+      background-color: #fff;
+      box-shadow:  1px 2px 10px 2px rgba(0, 0, 0, 0.5);
+   }
+
+   .close-icon {
+      font-size: 1.5em;
+      margin-top: 1%;
+      margin-left: 90%;
+    }
+
+   .todo-form {
+      width: 76% ;
+      position: absolute;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%,-50%);
+   }
+
+   .todo-form input, select {
+      display: block;
+      padding: 3% ;
+      border: 1px;
+      border-radius: 3px;
+      font-size: .9em;
+      background-color: var(--grey-color);
+   }
+
+   .todo-form input:focus{
+      outline: none;
+   }
+
+   .todo-input {
+      margin: 5% 0;
+   }
+
+   .todo-task {
+      width: 100%;
+      display: block;
+   }
+
+      .task-input {
+         margin: 5% 0;
+      }
+
+      .task-input input, select {
+         width: 100%;
+      }
+
+      .btn-form {
+         padding: 4% 15%;
+         border: 0;
+         border-radius: 15px;
+         background-color: var(--blue-color);
+         cursor: pointer;
+      }
+
+.show-edit{
+  list-style: none;
+  margin-top: 1%;
+  z-index: 10;
+}
+
+   .show-edit li {
+   padding: 10px 0px;
+   width: 80px;
+   text-align: center;
+   background-color: #fbf6f6;
+   font-size: .9em;
+   margin-left: auto;
+   }
+
+   .show-edit li:hover {
+      background-color: var(--blue-color);
+   }
+
+.sort__options {
+      position: absolute;
+      width: 187px;
+      background: var(--white-color);
+      border: 1px solid #e5e5e5;
+      box-shadow: 0px 6px 15px 5px rgba(0, 0, 0, 0.1);
+      border-radius: 6px;
+      right: 200px;
+}
+    
+    .sort__options ul {
+      padding: 0;
+      list-style: none;
+      margin: 0;
+    }
+    
+    .sort__options li {
+      padding-left: 1rem;
+      line-height: 40px;
+      vertical-align: middle;
+      border-bottom: 1px solid #e5e5e5;
+      cursor: pointer;
+      position: relative;
+    }
+    
+    .sort__options li > img {
+      margin-right: 8px;
+    }
+    
+    .image__checklist {
+      position: absolute;
+      right: 0;
+      top: 40%;
+      transform: translateX(-40%);
+    }
+   
+
+.login {
+   width: 100%;
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background-color: var(--white-color);
+}
+
+   .login-container {
+      position: relative;
+      width: 55vw;
+      height: 50vh;
+      border-radius: 10px;
+      background-color: var(--grey-color);
+   }
+
+   .login-form {
+      position: absolute;
+      top: 50%; 
+      left: 50%;
+      transform: translate(-50%,-50%);
+   }
+   
+
+   .login-body label {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      text-align: right;
+      margin-bottom: 10px;
+   }
+
+   .login-body input {
+      margin-left: 3%;
+      border: 0;
+    }
+
+
+    .checked-item,
+    .not-checked-item {
+      margin-left: 10px;
+    }
+    
+    .checked-item {
+      text-decoration: line-through;
+    }
+
+   @media only screen and (min-width: 768px) {
+
+      .activity-main {
+         display: grid;
+         grid-template-columns: 45% 45%;
+         gap: 5%;
+      }
+
+      .card-activity{
+         width: 100%;
+        margin: 2%;
+      }
+
+         .edit-btn, .delete-btn {
+            font-size: 1em;
+         }
+
+      .detail-head {
+         flex-direction: unset;
+      }
+
+      .message-container {
+         height: 25%;
+      }
+      
+         .message-text button {
+            padding: 5% 7vw;
+            font-size: 1.1em;
+         }
+
+      .btn-modal {
+         justify-content: center;
+      }
+
+      .todo-add-container {
+         width: 390px;
+         height: 470px;
+      }
+
+         .close-icon {
+            font-size: 1.5em;
+            margin-left: 93%;
+         }
+   }
+
+   @media only screen and (min-width: 992px) {
+
+      h1 {
+         font-size: 26px;
+      }
+
+      .activity-main {
+         display: grid; 
+         grid-template-columns: 31% 31% 31%;
+         gap: 2.5%;
+      }
+
+      .card-activity{
+         width: 100%;
+      }
+
+         .card-activity p {
+            font-size: 1.2em;
+         }
+
+         .edit-btn, .delete-btn {
+            font-size: 1.1em;
+         }
+
+         .card-wrap .check {
+            top: 8%;
+         }
+
+      .message-container {
+         height: 40%;
+         width: 65%;
+      }
+
+         .message-text  h3 {
+            font-size: 1.2em;
+         }
+      
+         .message-text button {
+            padding: 4% 6vw;
+         }
+
+      .todo-add-container {
+         width: 790px;
+         height: 320px;
+      }
+
+         .todo-form input, select {
+            padding: 1%;
+            font-size: 1em;
+         }
+
+         .todo-input {
+            margin: 2% 0;
+         }
+      
+      .todo-task {
+         width: 100%;
+         display: flex;
+      }
+   
+         .task-input {
+            flex: 50%;
+            margin: 0;
+         }
+
+         .task-input input.text-task, select{
+            width: 100%;
+            padding: 1%;
+         }
+
+         .task-input input, select {
+            width: 80%;
+            padding: 2%;
+         }
+
+         .btn-form {
+            padding: 1% 5%;
+         }
+   }
+
