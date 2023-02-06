@@ -18,7 +18,7 @@ return (
 <IoMdClose className='close-icon' onClick={() => setIsEditTask(false)}/>
 
 <div className='todo-form'>
-      <div className='todo-input'>
+      <div className='task-input'>
         <label>task</label>
         <input
           type='text' 

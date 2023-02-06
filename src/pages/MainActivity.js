@@ -34,6 +34,7 @@ function MainActivity() {
     { title: 'Z-A', sortBy: 'ascending', img: ascending },
     { title: 'Unfinished', sortBy: 'unfinished', img: unfinished },
   ];
+
   
 const axiosInstance = axios.create({
   baseURL: 'https://todolist-api-two.vercel.app',
@@ -59,6 +60,12 @@ async function fetchDetails() {
   function handleSubmitTodo(e) {
     e.preventDefault();
 
+    const existingActivity = activities.find(activity => activity.task === formValues.activity);
+    if (existingActivity) {
+      alert("Data already exists");
+      return;
+    }
+
     const json2 = JSON.stringify({
       id: '',
       task : formValues.activity,
@@ -67,7 +74,7 @@ async function fetchDetails() {
       priority : formValues.priority 
     });
 
-    fetch('https://todolist-api-two.vercel.app', {
+    fetch('https://todolist-api-two.vercel.app/', {
       method: 'POST',
       body: json2,
       headers: {
@@ -76,11 +83,7 @@ async function fetchDetails() {
     })
 
       .then((response) => {
-        if (response.status !== 201) {
-          return;
-        } else {
           return response.json();
-        }
       })
 
       .then((data) => {
