@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import axios from 'axios';
 import { HiOutlineTrash } from "react-icons/hi";
 import { MdOutlineModeEditOutline} from "react-icons/md";
@@ -20,12 +21,28 @@ function CardActivity({item, id, task, date, time, priority, activities, setActi
   ];
 
   function getDayName(date = new Date(), locale = 'en-US') {
-    return date.toLocaleDateString(locale, {weekday: 'long'});
+    return date.toLocaleDateString(locale, {weekday: 'short'});
   }
   const current = new Date(item.date);
   const dateNow = `${getDayName(new Date(item.date))}, ${current.getDate()} ${monthNames[current.getMonth()]}`;
 
-  
+  const circles = useRef(null);
+
+  useEffect(() => {
+    switch (priority) {
+        case "high":
+            circles.current.style.backgroundColor = "red";
+            break;
+        case "normal":
+            circles.current.style.backgroundColor = "yellow";
+            break;
+        case "low":
+            circles.current.style.backgroundColor = "green";
+            break;
+        default:
+            break;
+    }
+}, [priority]);
 
   return (
           <div className="card-activity" data-cy="activity-item"
@@ -38,10 +55,11 @@ function CardActivity({item, id, task, date, time, priority, activities, setActi
                 
                 <div className="card-body">
                   <p className="card-title" data-cy="activity-item-title">{task}</p>
+                  <div className='circle' ref={circles}></div>
                 </div>
 
                 <div className="card-footer">
-                <p>{item.date === "" || item.date === undefined ? 'no date' : dateNow}</p>
+                <p>{item.date === "" || item.date === undefined ? '-' : dateNow}&nbsp;&nbsp;.&nbsp;&nbsp;{item.time === "" || item.time === undefined ? '-' : item.time}</p>
 
                     <div className='edit-btn'>
                     <MdOutlineModeEditOutline className='edit-icon' 
