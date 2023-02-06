@@ -5,14 +5,14 @@ import { MdOutlineModeEditOutline} from "react-icons/md";
 function CardActivity({item, id, task, date, time, priority, activities, setActivities, fetchDetails, handleEdit, showModal}) {
 
     async function updateCheck() {
-      const response = await axios.get(`http://localhost:8001/activity/${id}`);
+      const response = await axios.get(`https://todolist-api-two.vercel.app/${id}`);
       const item = response.data;
       const updatedCheck = { ...item, done: !item.done };
-      await axios.put(`http://localhost:8001/activity/${id}`, updatedCheck);
+      await axios.put(`https://todolist-api-two.vercel.app/${id}`, updatedCheck);
       setActivities(
         activities.map(el => (el.id === id ? updatedCheck : el))
       );
-      fetchDetails();
+      fetchDetails(); 
     }
 
   const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",

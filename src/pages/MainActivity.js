@@ -36,11 +36,11 @@ function MainActivity() {
   ];
   
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:8001',
+  baseURL: 'https://todolist-api-two.vercel.app',
 });
 
 async function fetchDetails() {
-  const { data } = await axiosInstance.get('/activity/')
+  const { data } = await axiosInstance.get('/')
     setActivities(data)
 };
 
@@ -64,10 +64,10 @@ async function fetchDetails() {
       task : formValues.activity,
       date: formValues.date,
       time: formValues.time,
-      priority : formValues.priority
+      priority : formValues.priority 
     });
 
-    fetch('http://localhost:8001/activity', {
+    fetch('https://todolist-api-two.vercel.app', {
       method: 'POST',
       body: json2,
       headers: {
@@ -96,7 +96,7 @@ async function fetchDetails() {
   }
 
   const deleteActivity = (id) => {
-    fetch(`http://localhost:8001/activity/${id}`, {
+    fetch(`https://todolist-api-two.vercel.app/${id}`, {
       method: "DELETE",
       headers: {
         'Content-type': 'application/json'
@@ -124,11 +124,11 @@ async function fetchDetails() {
 }
 
 async function updateActivity(id) {
-  const response = await axiosInstance.get(`/activity/${id}`);
+  const response = await axiosInstance.get(`/${id}`);
  
   const updatedActivity = {...response.data, ...editValues};
 
-  await axiosInstance.put(`/activity/${id}`, updatedActivity);
+  await axiosInstance.put(`/${id}`, updatedActivity);
 
   setActivities({...activities, updatedActivity});
 
